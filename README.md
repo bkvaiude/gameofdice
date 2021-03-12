@@ -1,20 +1,48 @@
-# Welcome game of dice!
+# Welcome to game of dice!
 
-### If you are looking for ludo game, then you reach to right place!
+### If you are looking for python dice game, then you reach to right place!
 
-### What can you learn from this game
+## What can you learn from this game
 
 * https://click.palletsprojects.com/en/7.x/quickstart/#
 * How to create python package (click + setuptools) https://click.palletsprojects.com/en/7.x/setuptools/#setuptools-integration
 * Basic understanding of the setuptools
 * unittest https://docs.python.org/3/library/unittest.html
 * For beginner, it's right sample python project  
+    * virtualenv
+    * datatype like dict, orderdict, string
+    * string formatting, iterators
+    * classes, function, unittest 
+    * many more things
 
-To run the testcases
+### Setup
+
+Clone the git repo & follow the setup instructions
+
+#### With virtalenv
+
+1. `virtualenv env`
+2. `source env/bin/activate`
+3. `python game.py start`
+4. `python game.py start --help`
+
+#### With setuptools as Python Package
+1. `virtualenv env`
+2. `source env/bin/activate`
+3. `pip install --editable .`
+4. `gameofdice start`
+5. `gameofdice start --help`
+
+
+### To run the testcases
 
 `python -m unittest -v tests/*.py`
 
-Basic workflow of game (it has been changed little bit during the development) -_-
+
+
+-------------------------------------------------
+
+##### Basic workflow of game (it has been changed little bit during the development) -_-
 
 >> python game.py start
 >> Welcome to the Game Arena!
@@ -27,13 +55,15 @@ Shiva
 
 ```
 
-Game will commence on the enter key press
-- Each player need to score max. 20 points
-- If a player rolls the value "6" then they immediately get another chance to roll again and
-move ahead in the game.
-- If a player rolls the value "1" two consecutive times then they are forced to skip their next
-turn as a penalty.
-- User get 5 secs to roll the dice, after it is auto rolled by computer behalf of user
+    Game will commence on any key press
+    - Each player need to score max. 36 points
+    - If a player rolls the value "6" then they immediately get another chance to roll again and
+    move ahead in the game.
+    - If a player rolls the value "1" two consecutive times then they are forced to skip their next
+    turn as a penalty.
+    - Hit any key to roll the dice!
+
+    Press any key to start the game!
 
 ```
 
