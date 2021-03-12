@@ -44,13 +44,17 @@ Clone the git repo & follow the setup instructions
 
 ##### Basic workflow of game (it has been changed little bit during the development) -_-
 
->> python game.py start
->> Welcome to the Game Arena!
->> Enter the number of players:
+> python game.py start
+
+> Welcome to the Game Arena!
+
+> Enter the number of players:
 2
->> Enter name for player 1
+
+> Enter name for player 1
 Ram 
->> Enter name for player 2
+
+> Enter name for player 2
 Shiva
 
 ```
@@ -68,52 +72,52 @@ Shiva
 ```
 
 Round 1
->>Ram's turn to roll the dice, press enter key
+>Ram's turn to roll the dice, press enter key
 2
->>Shiv's turn to roll the dice, press enter key
+>Shiv's turn to roll the dice, press enter key
 2
 
 Round 2
->>Ram's turn to roll the dice, press enter key
+>Ram's turn to roll the dice, press enter key
 6
->>Ram's turn to roll the dice, press enter key
+>Ram's turn to roll the dice, press enter key
 2
->>Shiv's turn to roll the dice, press enter key
+>Shiv's turn to roll the dice, press enter key
 5
 
 Round 3
->>Ram's turn to roll the dice, press enter key
+>Ram's turn to roll the dice, press enter key
 1
->>Shiv's turn to roll the dice, press enter key
+>Shiv's turn to roll the dice, press enter key
 5
 
 Round 4
->>Ram's turn to roll the dice, press enter key
+>Ram's turn to roll the dice, press enter key
 1
->>Shiv's turn to roll the dice, press enter key
+>Shiv's turn to roll the dice, press enter key
 5
 
 Round 5
->>Shiv's turn to roll the dice, press enter key
+>Shiv's turn to roll the dice, press enter key
 5
 
 Ram 12
 Shiv 22
 
 Round 6
->>Ram's turn to roll the dice, press enter key
+>Ram's turn to roll the dice, press enter key
 5
 
 Round 7
->>Ram's turn to roll the dice, press enter key
+>Ram's turn to roll the dice, press enter key
 1
 
 Round 8
->>Ram's turn to roll the dice, press enter key
+>Ram's turn to roll the dice, press enter key
 1
 
 Round 9
->>Ram's turn to roll the dice, press enter key
+>Ram's turn to roll the dice, press enter key
 1
 Ram 20
 Shiv 22
