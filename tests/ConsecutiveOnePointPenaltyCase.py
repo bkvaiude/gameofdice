@@ -6,7 +6,7 @@ from Game import Game
 
 class ConsecutiveOnePointPenaltyCase(unittest.TestCase):
     def setUp(self):
-        self.game = Game(3)
+        self.game = Game(3, 36)
         self.game.processedPlayerCount = 1
         self.game.round = 1
         self.game.playerId = 1

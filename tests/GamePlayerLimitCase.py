@@ -9,16 +9,16 @@ class GamePlayerLimitCase(unittest.TestCase):
         pass
 
     def test_maxPlayerLimit_validatePlayersLimit(self):
-        localGame = Game(10)
+        localGame = Game(10, 36)
         with self.assertRaises(click.Abort):
             localGame.validatePlayersLimit()
 
     def test_validPlayerLimit_validatePlayersLimit(self):
-        localGame = Game(2)
+        localGame = Game(2, 36)
         localGame.validatePlayersLimit()
         self.assertEqual(localGame.numberOfPlayers, 2)
 
     def test_minPlayerLimit_validatePlayersLimit(self):
-        localGame = Game(1)
+        localGame = Game(1, 36)
         with self.assertRaises(click.Abort):
             localGame.validatePlayersLimit()

@@ -6,7 +6,7 @@ from Game import Game
 
 class GameCompletedUpdateCase(unittest.TestCase):
     def setUp(self):
-        self.game = Game(3)
+        self.game = Game(3, 36)
         self.game.processedPlayerCount = 1
         self.game.round = 1
         self.game.players = {
