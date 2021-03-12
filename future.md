@@ -65,6 +65,9 @@ Now, it's interactive game where multiple players can join, chat & play the game
 
 It is becoming the pet project. I would like to keep experimenting with it. 
 
-Let's see how far, we can go with flutter version :)
+Let's see how far we can go with flutter version :)
 
 Stay tunned for something AWESOME!
+
+[Want to know my findings on cardless EMI](https://github.com/bkvaiude/easyemi "Curious huh?")
+

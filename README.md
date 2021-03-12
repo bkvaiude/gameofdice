@@ -13,7 +13,9 @@
     * datatype like dict, orderdict, string
     * string formatting, iterators
     * classes, function, unittest 
-    * many more things
+    * Many more things
+    * [Future Plans](https://github.com/bkvaiude/gameofdice/blob/main/future.md "Know more about the full architecture!")
+
 
 ### Setup
 
