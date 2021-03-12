@@ -1,5 +1,7 @@
 ### How can we move it to internet?
 
+#### Check the https://highguts.com for bingo which is pretty much follows into the same category game.
+
 Frontend
 
     1. Go for hybrid app development like react-native, flutter
