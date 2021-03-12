@@ -58,3 +58,4 @@ Now, it's interactive game where multiple players can join, chat & play the game
         2. Multiple theme or background for rolling dice
         3. Special effects for dice
         4. virtual currency to participate in league matches
+
