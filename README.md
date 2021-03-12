@@ -1,5 +1,22 @@
-"""
-python game.py start
+# Welcome game of dice!
+
+### If you are looking for ludo game, then you reach to right place!
+
+### What can you learn from this game
+
+* https://click.palletsprojects.com/en/7.x/quickstart/#
+* How to create python package (click + setuptools) https://click.palletsprojects.com/en/7.x/setuptools/#setuptools-integration
+* Basic understanding of the setuptools
+* unittest https://docs.python.org/3/library/unittest.html
+* For beginner, it's right sample python project  
+
+To run the testcases
+
+`python -m unittest -v tests/*.py`
+
+Basic workflow of game (it has been changed little bit during the development) -_-
+
+>> python game.py start
 >> Welcome to the Game Arena!
 >> Enter the number of players:
 2
@@ -8,6 +25,8 @@ Ram
 >> Enter name for player 2
 Shiva
 
+```
+
 Game will commence on the enter key press
 - Each player need to score max. 20 points
 - If a player rolls the value "6" then they immediately get another chance to roll again and
@@ -15,6 +34,8 @@ move ahead in the game.
 - If a player rolls the value "1" two consecutive times then they are forced to skip their next
 turn as a penalty.
 - User get 5 secs to roll the dice, after it is auto rolled by computer behalf of user
+
+```
 
 Round 1
 >>Ram's turn to roll the dice, press enter key
@@ -66,5 +87,3 @@ Round 9
 1
 Ram 20
 Shiv 22
-
-"""
