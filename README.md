@@ -2,7 +2,7 @@
 
 ### If you are looking for python dice game, then you reach to right place!
 
-## What can you learn from this game
+## What can you learn from this game project?
 
 * https://click.palletsprojects.com/en/7.x/quickstart/#
 * How to create python package (click + setuptools) https://click.palletsprojects.com/en/7.x/setuptools/#setuptools-integration
