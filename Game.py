@@ -5,19 +5,22 @@ from operator import getitem
 
 
 class Game:
-    def __init__(self, numberOfPlayers):
+    def __init__(self, numberOfPlayers, targetScore):
         self.numberOfPlayers = numberOfPlayers
+        self.targetScore = targetScore
         self.players = {}
 
     def start(self):
         self.validatePlayersLimit()
+        self.validateTargetScoreLimit()
         self.setPlayersName()
         self.decidePlayersTurnOrder()
         self.welcomeAllPlayers()
         self.boostrap()
+        NO_OF_PLAYERS = self.numberOfPlayers
         while self.numberOfPlayers > 0:
             self.roundSetup()
-            while self.processedPlayerCount < self.numberOfPlayers:
+            while self.processedPlayerCount < NO_OF_PLAYERS:
                 self.setNextPlayer()
                 if self.validateGameCompletedByPlayer():
                     continue
@@ -31,6 +34,14 @@ class Game:
             click.echo(
                 "Wow, We also want to build bigger game! Support for %s players, huh? \nLet's work together to build better one :)"
                 % str(self.numberOfPlayers)
+            )
+            raise click.Abort()
+
+    def validateTargetScoreLimit(self):
+        if self.targetScore < 18 or self.targetScore > 100:
+            click.echo(
+                "Wow, We also want to build bigger game! Support for %s target score, huh? \nLet's work together to build better one :)"
+                % str(self.targetScore)
             )
             raise click.Abort()
 
@@ -64,7 +75,7 @@ class Game:
         )
 
     def checkGameCompletedByPlayer(self):
-        if 36 <= self.players[self.playerId]["score"]:
+        if self.targetScore <= self.players[self.playerId]["score"]:
             self.numberOfPlayers = self.numberOfPlayers - 1
             self.players[self.playerId]["is_game_completed"] = True
 
@@ -126,6 +137,11 @@ class Game:
         self.playerId = self.listOfPlayerKeys[self.processedPlayerCount]
         self.round = self.round + 1
         click.echo("\n----Round {round}----\n".format(round=self.round))
+        click.echo(
+            "\n--{pid}--Round {round}----\n".format(
+                round=self.players, pid=self.playerId
+            )
+        )
 
     def welcomeAllPlayers(self):
         welcome = """
