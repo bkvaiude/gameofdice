@@ -67,6 +67,7 @@ Shiva
     move ahead in the game.
     - If a player rolls the value "1" two consecutive times then they are forced to skip their next
     turn as a penalty.
+    - sum of last 3 dice rolls equal to 10 then offer another chance to roll
     - Hit any key to roll the dice!
 
     Press any key to start the game!

@@ -53,7 +53,7 @@ class Game:
                     ["Shiva", "Shankar", "Trinetra", "Rudra", "Mahadev", "Nilkantha"]
                 ),
             )
-            self.players[x] = {"name": value}
+            self.players[x] = {"name": value, "steps": []}
 
     def decidePlayersTurnOrder(self):
         listOfPlayers = list(self.players.items())
@@ -67,12 +67,14 @@ class Game:
         self.saveScore(luckyNumber)
         self.checkGameCompletedByPlayer()
         self.setContextForConsecutiveOnePointPenaltyRule(luckyNumber)
-        self.validateConsecutiveSixPointsRewardRule(luckyNumber)
+        if self.validateConsecutiveSixPointsRewardRule(luckyNumber):
+            self.validateLastNStepsScoreMatchingToGivenPointsRewardRule(luckyNumber)
 
     def saveScore(self, luckyNumber):
         self.players[self.playerId]["score"] = (
             self.players[self.playerId].get("score", 0) + luckyNumber
         )
+        self.players[self.playerId]["steps"].append(luckyNumber)  # todo
 
     def checkGameCompletedByPlayer(self):
         if self.targetScore <= self.players[self.playerId]["score"]:
@@ -88,8 +90,32 @@ class Game:
     def validateConsecutiveSixPointsRewardRule(self, luckyNumber):
         if 6 != luckyNumber:
             self.processedPlayerCount = self.processedPlayerCount + 1
+            result = False
         else:
+            result = True
             click.echo("Hurray! you have been rewarded another turn to roll the dice.")
+        return result
+
+    def validateLastNStepsScoreMatchingToGivenPointsRewardRule(self, luckyNumber):
+        """
+        strore the score for each round
+        steps = [1,2,1,4]
+
+        travel through the array from reverse for N times & do the sum
+        If the sum === given score than offer another chance
+        """
+        configSteps = -3
+        configScoreOfSum = 10
+        steps = self.players[self.playerId]["steps"][configSteps:]
+        result = sum(steps)
+        if self.round > 2 and result == configScoreOfSum:
+            result = True
+            click.echo(
+                "Hurray! you have been rewarded another turn to roll the dice because you score 10 points in last 3 steps."
+            )
+        else:
+            result = False
+            self.processedPlayerCount = self.processedPlayerCount + 1
 
     def validateConsecutiveOnePointPenaltyRule(self):
         self.players[self.playerId][
@@ -137,16 +163,11 @@ class Game:
         self.playerId = self.listOfPlayerKeys[self.processedPlayerCount]
         self.round = self.round + 1
         click.echo("\n----Round {round}----\n".format(round=self.round))
-        click.echo(
-            "\n--{pid}--Round {round}----\n".format(
-                round=self.players, pid=self.playerId
-            )
-        )
 
     def welcomeAllPlayers(self):
         welcome = """
             Game will commence on any key press
-            - Each player need to score max. 36 points
+            - Each player need to score max. {score} points
             - If a player rolls the value "6" then they immediately get another chance to roll again and
             move ahead in the game.
             - If a player rolls the value "1" two consecutive times then they are forced to skip their next
@@ -155,7 +176,7 @@ class Game:
 
             Press any key to start the game!
         """
-        click.pause(welcome)
+        click.pause(welcome.format(score=self.targetScore))
 
     def leaderboard(self):
         """
